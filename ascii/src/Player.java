@@ -7,8 +7,8 @@ public class Player {
     private ArrayList<String> inventory;
 
     public void setCharacter(String character, String name) {
-        this.character = character;
         this.name = name;
+        this.character = character;
     }
 
     public void increaseHealth() {
