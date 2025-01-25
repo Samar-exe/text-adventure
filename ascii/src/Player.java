@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class Player {
-    private String name;
-    private String character;
+    private String NAME;
+    private String ROLE;
     private int health;
     private ArrayList<String> inventory;
 
-    public void setCharacter(String character, String name) {
-        this.name = name;
-        this.character = character;
+    public void setCharacter(String role, String name) {
+        this.NAME = name;
+        this.ROLE = role;
         this.health = 5;
     }
 
@@ -22,8 +22,25 @@ public class Player {
         this.inventory.add(item);
     }
 
+
     public String toString() {
         System.out.println();
-        return String.format("Name: %s\nHealth: %d\nRole: %s", this.name, this.health, this.character);
+        return String.format("Name: %s\nHealth: %d\nRole: %s", this.NAME, this.health, this.ROLE);
+    }
+
+    public String getNAME() {
+        return NAME;
+    }
+
+    public String getROLE() {
+        return ROLE;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public ArrayList<String> getInventory() {
+        return inventory;
     }
 }
