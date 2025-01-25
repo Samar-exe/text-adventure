@@ -39,6 +39,40 @@ public class Player {
         }
     }
 
+    public boolean checkStatus() {
+        return this.alive;
+    }
+
+    public void decreaseHealth(int amount) {
+        if ((this.health - amount) > 0) {
+            this.health -= amount;
+        } else {
+            this.health = 0;
+            this.alive = false;
+        }
+    }
+
+    public void increaseMoney(int amount) {
+        this.money += amount;
+    }
+
+    public void decreaseMoney(int amount) {
+        this.money -= amount;
+    }
+
+    public boolean checkMoney(int deduct) {
+        if (this.money > 0) {
+            if (this.money - deduct >= 0) {
+                return true;
+            } else {
+                System.out.println("not enough Money");
+                return false;
+            }
+        }
+        System.out.println("No money");
+        return false;
+    }
+
     public void addItem(String item) {
         this.inventory.add(item);
     }
