@@ -14,6 +14,7 @@ public class Player {
     }
 
     public void setCharacter(String role, String name) {
+        this.alive = true;
         this.NAME = name;
         this.ROLE = role;
         this.health = 5;
@@ -76,7 +77,6 @@ public class Player {
     public void addItem(String item) {
         this.inventory.add(item);
     }
-
 
     public String toString() {
         System.out.println();
