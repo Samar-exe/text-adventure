@@ -9,6 +9,7 @@ public class Player {
     public void setCharacter(String character, String name) {
         this.name = name;
         this.character = character;
+        this.health = 5;
     }
 
     public void increaseHealth() {
@@ -22,6 +23,7 @@ public class Player {
     }
 
     public String toString() {
+        System.out.println();
         return String.format("Name: %s\nHealth: %d\nRole: %s", this.name, this.health, this.character);
     }
 }
