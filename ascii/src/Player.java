@@ -5,6 +5,13 @@ public class Player {
     private String ROLE;
     private int health;
     private ArrayList<String> inventory;
+    private int money;
+    private boolean alive;
+    private int combatPoints;
+
+    public Player() {
+        this.inventory = new ArrayList<>();
+    }
 
     public void setCharacter(String role, String name) {
         this.NAME = name;
