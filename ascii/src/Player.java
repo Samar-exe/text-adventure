@@ -80,7 +80,12 @@ public class Player {
 
     public String toString() {
         System.out.println();
-        return String.format("Name: %s\nHealth: %d\nRole: %s", this.NAME, this.health, this.ROLE);
+        StringBuilder items = new StringBuilder();
+        for (String item : this.inventory) {
+            items.append(item + "\n");
+        }
+        return String.format("Name: %s\nHealth: %d\nRole: %s\nMoney: %d\nItems:\n%s", this.NAME, this.health, this.ROLE,
+                this.money, items);
     }
 
     public String getNAME() {
