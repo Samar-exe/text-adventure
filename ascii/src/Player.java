@@ -17,6 +17,20 @@ public class Player {
         this.NAME = name;
         this.ROLE = role;
         this.health = 5;
+        this.money = 20;
+        this.combatPoints = 5;
+    }
+
+    public void increaseCombatPoints(int amount) {
+        this.combatPoints += amount;
+    }
+
+    public void decreaseCombatPoints(int amount) {
+        this.combatPoints -= amount;
+    }
+
+    public int getCombatPoints() {
+        return this.combatPoints;
     }
 
     public void increaseHealth() {
