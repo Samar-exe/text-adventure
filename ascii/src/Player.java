@@ -8,9 +8,19 @@ public class Player {
     private int money;
     private boolean alive;
     private int combatPoints;
+    private int exp;
 
     public Player() {
         this.inventory = new ArrayList<>();
+    }
+
+    public void expIncrease(int amount) {
+        this.exp += amount;
+        int temp = this.exp;
+        if (temp >= 10) {
+            temp = 0;
+            increaseCombatPoints(1);
+        }
     }
 
     public void setCharacter(String role, String name) {

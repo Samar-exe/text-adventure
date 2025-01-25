@@ -9,6 +9,7 @@ public class UserInterface {
     private Scanner sc;
     private Player player;
     private HashMap<Integer, String> roles;
+    private Scenario scenario;
 
     public UserInterface() {
         this.sc = new Scanner(System.in);
@@ -19,6 +20,7 @@ public class UserInterface {
         roles.put(3, "Mercenary");
         roles.put(4, "Ranger");
         this.mobEnemy = new MobEnemy(this.player);
+        this.scenario = new Scenario(this.player, this.sc);
     }
 
     public void start() {
@@ -91,8 +93,13 @@ public class UserInterface {
             if (!this.player.checkStatus()) {
                 break;
             }
-            mobEnemy.enemyEncounter();
+            this.scenario.startScenario();
+            if(!this.player.checkStatus()){
+                break;
+            }
         }
+
+        System.out.println("Game Over");
     }
 
     private void mageAdventure() {
