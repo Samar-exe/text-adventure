@@ -22,9 +22,10 @@ public class UserInterface {
     public void start() {
         WelcomeScreen();
         characterCreation();
+        System.out.println(this.player);
     }
 
-    public void characterCreation() {
+    private void characterCreation() {
         String name;
         String role;
         // Choose name
@@ -37,7 +38,7 @@ public class UserInterface {
             System.out.println("Please Enter a name");
         }
 
-        System.out.print("Select one of the following Role : \n 1: Knight\n2: Mage\n 3: Mercenary\n4: Ranger");
+        System.out.println("Select one of the following Role :\n1: Knight\n2: Mage\n3: Mercenary\n4: Ranger");
         while (true) {
             role = sc.nextLine();
             if (this.roles.contains(role)) {
@@ -48,7 +49,7 @@ public class UserInterface {
         this.player.setCharacter(role, name);
     }
 
-    public void WelcomeScreen() {
+    private void WelcomeScreen() {
         try {
             Process p = Runtime.getRuntime().exec("figlet Txt Adventure");
             String s;
